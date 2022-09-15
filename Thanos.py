@@ -15,12 +15,13 @@ for root, dirs, file in os.walk(os.curdir):
 random.shuffle(files)
 halfFiles = files[::2]
 
+print(halfFiles)
 
 print("The hardest choices require the strongest wills.")
 sleep(2.5)
 print("You have my respect, User. When I am done, half of your files will still exist.")
 sleep(2.5)
-print("*** You look into 14,000,605 possible futures. You see only 1 in which this destruction is ultimately averted.")
+print("*** You look into 14,000,605 possible futures. You see only 1 in which this destruction is ultimately averted. ***")
 sleep(3.5)
 print("*** Roll your 14,000,605 sided dice ***")
 
@@ -41,22 +42,22 @@ else:
         if not isinstance(file, list):
             try:
                 os.remove(file)
-            except:
-                continue
+            except Exception as e:
+                print(e)
         else:
             for item in file:
                 if not isinstance(item, list):
                     try:
                         os.remove(item)
-                    except:
-                        continue
+                    except Exception as e:
+                        print(e)
                 else:
                     for subItem in item:
                         if not isinstance(subItem, list):
                             try:
                                 os.remove(subItem)
-                            except:
-                                continue
+                            except Exception as e:
+                                print(e)
                         else:
                             print("you have to keep going man!!")
       
