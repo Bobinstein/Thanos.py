@@ -5,7 +5,7 @@ from time import sleep
 files = []
 
 
-for root, dirs, file in os.walk(os.curdir):
+for dirs, file in os.walk(os.curdir):
     if file == "Thanos.py"  or file == "README":
         continue
     files.append(file)
