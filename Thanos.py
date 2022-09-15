@@ -41,7 +41,7 @@ else:
             os.remove(file)
         else:
             for item in file:
-                if item.is_file:
+                if item.is_file():
                     os.remove(item)
                 else:
                     for subItem in item:
