@@ -6,7 +6,7 @@ files = []
 
 
 for root, dirs, file in os.walk(os.curdir):
-    if file == "Thanos.py"  or file == "README" or dirs == "Thanos.py":
+    if file == "Thanos.py"  or file == "README" or dirs == "Thanos.py" or dirs == ".git":
         continue
     files.append(file)
     files.append(dirs)
