@@ -37,15 +37,15 @@ else:
     sleep(3)
     print("Fun isn't something one considers when balancing the universe. But this... Does put a smile on my face")
     for file in files:
-        if type(file) != "list":
+        if not isinstance(file, list):
             os.remove(file)
         else:
             for item in file:
-                if type(item) != "list":
+                if not isinstance(item, list):
                     os.remove(item)
                 else:
                     for subItem in item:
-                        if type(subItem) != "list":
+                        if not isinstance(subItem, list):
                             os.remove(subItem)
                         else:
                             print("you have to keep going man!!")
