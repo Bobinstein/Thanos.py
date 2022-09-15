@@ -38,15 +38,24 @@ else:
     print("Fun isn't something one considers when balancing the universe. But this... Does put a smile on my face")
     for file in files:
         if not isinstance(file, list):
-            os.remove(file)
+            try:
+                os.remove(file)
+            except:
+                continue
         else:
             for item in file:
                 if not isinstance(item, list):
-                    os.remove(item)
+                    try:
+                        os.remove(item)
+                    except:
+                        continue
                 else:
                     for subItem in item:
                         if not isinstance(subItem, list):
-                            os.remove(subItem)
+                            try:
+                                os.remove(subItem)
+                            except:
+                                continue
                         else:
                             print("you have to keep going man!!")
       
