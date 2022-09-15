@@ -4,10 +4,10 @@ import random
 from time import sleep
 
 files = []
-halfFiles = []
 
 
-for root, dirs, file in os.walk(os.getcwd()):
+
+for root, dirs, file in os.walk(".", topdown=False):
     if file == "Thanos.py"  or file == "README" or dirs == "Thanos.py" or dirs == ".git":
         continue
     files.append(file)
@@ -15,7 +15,7 @@ for root, dirs, file in os.walk(os.getcwd()):
 
 
 random.shuffle(files)
-halfFiles.append(files[::2])
+halfFiles = files[::2]
 
 
 print("The hardest choices require the strongest wills.")
