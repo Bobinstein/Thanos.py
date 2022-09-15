@@ -1,4 +1,3 @@
-from genericpath import isfile
 import os
 import random
 from time import sleep
@@ -7,7 +6,7 @@ files = []
 
 
 
-for root, dirs, file in os.walk(os.getcwd(), topdown=True):
+for root, dirs, file in os.walk(os.getcwd()):
     if file == "Thanos.py"  or file == "README" or dirs == "Thanos.py" or dirs == ".git":
         continue
     files.append(file)
