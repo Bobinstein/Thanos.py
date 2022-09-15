@@ -20,12 +20,12 @@ sleep(2.5)
 print("You have my respect, User. When I am done, half of your files will still exist.")
 sleep(2.5)
 print("*** You look into 14,000,605 possible futures. You see only 1 in which this destruction is ultimately averted.")
-sleep(2.5)
+sleep(3.5)
 print("*** Roll your 14,000,605 sided dice ***")
 
 roll = random.randint(1, 14000605)
 
-sleep(2)
+sleep(3)
 
 if roll == 69420:
     print("*** You rolled a", roll, "***")
@@ -34,13 +34,23 @@ if roll == 69420:
 
 else:
     print("*** You rolled a", roll, "***")
-    sleep(2)
+    sleep(3)
     print("Fun isn't something one considers when balancing the universe. But this... Does put a smile on my face")
     for file in files:
-        for item in file:
-         #   os.remove(file)
-            print(file)
-    sleep(2.5)
+        if file.is_file():
+            os.remove(file)
+        else:
+            for item in file:
+                if item.is_file:
+                    os.remove(item)
+                else:
+                    for subItem in item:
+                        if subItem.is_file():
+                            os.remove(subItem)
+                        else:
+                            print("you have to keep going man!!")
+      
+    sleep(4.5)
     print("Perfectly balanced, as all things should be.")
 
 
