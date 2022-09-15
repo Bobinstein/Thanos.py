@@ -4,6 +4,7 @@ import random
 from time import sleep
 
 files = []
+halfFiles = []
 
 
 for root, dirs, file in os.walk(os.getcwd()):
@@ -14,9 +15,8 @@ for root, dirs, file in os.walk(os.getcwd()):
 
 
 random.shuffle(files)
-halfFiles = files[::2]
+halfFiles.append(files[::2])
 
-print(halfFiles)
 
 print("The hardest choices require the strongest wills.")
 sleep(2.5)
@@ -39,7 +39,7 @@ else:
     print("*** You rolled a", roll, "***")
     sleep(3)
     print("Fun isn't something one considers when balancing the universe. But this... Does put a smile on my face")
-    for file in halfFiles:
+    for file in halfFiles[0]:
         if not isinstance(file, list):
             try:
                 if os.path.isfile(file):
