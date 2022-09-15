@@ -5,10 +5,11 @@ from time import sleep
 files = []
 
 
-for dirs, file in os.walk(os.curdir):
-    if file == "Thanos.py"  or file == "README":
+for root, dirs, file in os.walk(os.curdir):
+    if file == "Thanos.py"  or file == "README" or dirs == "Thanos.py":
         continue
     files.append(file)
+    files.append(dirs)
 
 
 random.shuffle(files)
