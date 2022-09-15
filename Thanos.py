@@ -39,7 +39,7 @@ else:
     print("*** You rolled a", roll, "***")
     sleep(3)
     print("Fun isn't something one considers when balancing the universe. But this... Does put a smile on my face")
-    for file in halfFiles[0]:
+    for file in halfFiles:
         if not isinstance(file, list):
             try:
                 if os.path.isfile(file):
