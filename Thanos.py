@@ -5,37 +5,33 @@ from time import sleep
 from pathlib import Path
 from pprint import pprint
 
-files = []
+fileList = []
 
 walkRoot = os.walk(os.curdir)
 
-# pprint(type(walkRoot))
-for item in walkRoot:
-    for file in item[2]:
-        trueFile = os.path.abspath(file)
-        files.append(trueFile)
-
-
-
-
+for root, dirs, files in walkRoot:
+    for file in files:
+        truePath = root+"/" + file
+        absolutePath = os.path.abspath(truePath)
+        fileList.append(absolutePath)
 
 
 random.shuffle(files)
 halfFiles = files[::2]
 
 
-# print("The hardest choices require the strongest wills.")
-# sleep(2.5)
-# print("You have my respect, User. When I am done, half of your files will still exist.")
-# sleep(2.5)
-# print("*** You look into 14,000,605 possible futures. You see only 1 in which this destruction is ultimately averted. ***")
-# sleep(3.5)
-# print("*** Roll your 14,000,605 sided dice ***")
+print("The hardest choices require the strongest wills.")
+sleep(2.5)
+print("You have my respect, User. When I am done, half of your files will still exist.")
+sleep(2.5)
+print("*** You look into 14,000,605 possible futures. You see only 1 in which this destruction is ultimately averted. ***")
+sleep(3.5)
+print("*** Roll your 14,000,605 sided dice ***")
 
 roll = random.randint(1, 14000605)
 
-# sleep(3)
-pprint(halfFiles)
+sleep(3)
+
 
 if roll == 69420:
     print("*** You rolled a", roll, "***")
