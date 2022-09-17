@@ -14,10 +14,11 @@ for root, dirs, files in walkRoot:
         truePath = root+"/" + file
         absolutePath = os.path.abspath(truePath)
         fileList.append(absolutePath)
+        # pprint(absolutePath)
 
 
-random.shuffle(files)
-halfFiles = files[::2]
+random.shuffle(fileList)
+halfFiles = fileList[::2]
 
 
 print("The hardest choices require the strongest wills.")
@@ -32,7 +33,7 @@ roll = random.randint(1, 14000605)
 
 sleep(3)
 
-
+pprint(halfFiles)
 if roll == 69420:
     print("*** You rolled a", roll, "***")
     sleep(2)
@@ -45,7 +46,8 @@ else:
    
 
     for file in halfFiles:
-        os.remove(file)        
+        os.remove(file)   
+        # print(file)     
     sleep(4.5)
     print("Perfectly balanced, as all things should be.")
 
