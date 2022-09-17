@@ -11,6 +11,8 @@ walkRoot = os.walk(os.curdir)
 
 for root, dirs, files in walkRoot:
     for file in files:
+        if file == "Thanos.py":
+            continue
         truePath = root+"/" + file
         absolutePath = os.path.abspath(truePath)
         fileList.append(absolutePath)
