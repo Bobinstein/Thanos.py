@@ -15,7 +15,6 @@ for item in walkRoot:
         trueFile = os.path.abspath(file)
         files.append(trueFile)
 
-pprint(files)
 
 
 
