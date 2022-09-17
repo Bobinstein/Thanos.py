@@ -33,7 +33,7 @@ roll = random.randint(1, 14000605)
 
 sleep(3)
 
-pprint(halfFiles)
+# pprint(halfFiles)
 if roll == 69420:
     print("*** You rolled a", roll, "***")
     sleep(2)
